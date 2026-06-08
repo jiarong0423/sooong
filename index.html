@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://script.google.com https://script.googleusercontent.com; img-src 'self' data:; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'">
+  <title>黑客松實務專家匹配測驗</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-label="問卷首頁">
+      <p class="eyebrow">黑客松組隊前的小測驗</p>
+      <h1>30 秒測出你最適合支援哪個環節</h1>
+      <p class="lead">我們已經完成前後端架構、技術雛形、資料觀察與初步企劃。現在想找各領域專業人才，幫忙校正實務流程與判斷邊界。</p>
+      <div class="trust-row" aria-label="參與說明">
+        <span>不用寫程式</span>
+        <span>不用提供資料</span>
+        <span>只聊你熟的那一塊</span>
+      </div>
+    </section>
+
+    <section class="progress-card" aria-label="目前進度">
+      <strong>目前狀態：</strong>
+      有一個治理方向已經先跑過資料觀察與驗證節奏，算是目前比較有把握的一塊；細節先不公開展開。這份測驗只用來快速找到誰能幫忙校正哪個實務面。
+    </section>
+
+    <section class="quiz-shell" aria-label="實務專家匹配測驗">
+      <div class="step-indicator">
+        <span class="step-dot active" data-step-dot="1">1</span>
+        <span class="step-line"></span>
+        <span class="step-dot" data-step-dot="2">2</span>
+        <span class="step-line"></span>
+        <span class="step-dot" data-step-dot="3">3</span>
+      </div>
+
+      <section class="quiz-step active" data-step="1">
+        <div class="step-heading">
+          <p>Step 1</p>
+          <h2>你比較熟哪一塊？</h2>
+        </div>
+        <div class="option-grid" role="radiogroup" aria-label="選擇熟悉領域">
+          <button class="option-card" type="button" data-area="form">
+            <strong>表單審查</strong>
+            <span>審查表、申請書、跨表核對、欄位防錯。</span>
+          </button>
+          <button class="option-card" type="button" data-area="admin">
+            <strong>行政文書</strong>
+            <span>公文、裁處、訴願、審查流程、人工覆核。</span>
+          </button>
+          <button class="option-card" type="button" data-area="stats">
+            <strong>統計口徑</strong>
+            <span>政府統計、指標定義、欄位定義不一致。</span>
+          </button>
+          <button class="option-card" type="button" data-area="audit">
+            <strong>稽查流程</strong>
+            <span>現場稽查、管理流程、異常提示語氣。</span>
+          </button>
+          <button class="option-card" type="button" data-area="ux">
+            <strong>第一線使用</strong>
+            <span>報表、派案、管理決策、儀表板第一眼。</span>
+          </button>
+          <button class="option-card" type="button" data-area="pitch">
+            <strong>提案整理</strong>
+            <span>PM、黑客松節奏、Demo 故事、簡報收斂。</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="quiz-step" data-step="2">
+        <div class="step-heading">
+          <p>Step 2</p>
+          <h2>你對這題的把握感？</h2>
+        </div>
+        <div class="confidence-grid" role="radiogroup" aria-label="選擇把握程度">
+          <button class="confidence-card" type="button" data-confidence="expert">
+            <strong>這我很熟</strong>
+            <span>我知道現場會在哪裡卡住，也能講出原因。</span>
+          </button>
+          <button class="confidence-card" type="button" data-confidence="direction">
+            <strong>我有頭緒</strong>
+            <span>可以幫忙看方向，或提醒幾個常見誤區。</span>
+          </button>
+          <button class="confidence-card" type="button" data-confidence="curious">
+            <strong>我先旁聽</strong>
+            <span>我有興趣，但可能要先看討論方向。</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="quiz-step" data-step="3">
+        <div class="result-card">
+          <p class="result-kicker">匹配結果</p>
+          <h2 id="result-title">流程防錯大師</h2>
+          <p id="result-copy">你很適合幫忙看表單流程中的錯填、漏填與人工覆核邊界。</p>
+          <div class="result-box">
+            <strong>你可以直接回我：</strong>
+            <p id="reply-text">我比較熟表單審查，可以幫你看哪裡可能想錯。</p>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <label>
+              怎麼稱呼
+              <input type="text" name="display_name" placeholder="暱稱或姓名" required>
+            </label>
+            <label>
+              聯絡方式
+              <input type="text" name="contact" placeholder="Email、社群帳號或公開留言連結" required>
+            </label>
+            <label>
+              想補充的話
+              <textarea name="message" rows="3" placeholder="例如：我熟行政文書，可以幫你看人工覆核邊界。"></textarea>
+            </label>
+            <p class="form-hint">送出後只會記錄你填的內容與測驗結果，用來後續聯絡；請不要填私人敏感資料。</p>
+          </form>
+          <div class="result-actions">
+            <button class="primary-action" type="button" id="copy-reply">複製回覆句</button>
+            <button class="primary-action" type="submit" form="contact-form" id="submit-contact">送出聯絡資料</button>
+            <button class="secondary-action" type="button" id="restart-quiz">重新測一次</button>
+          </div>
+          <p class="submit-status" id="submit-status" aria-live="polite"></p>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script src="guard.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
